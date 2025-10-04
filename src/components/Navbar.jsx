@@ -1,67 +1,71 @@
-import React, { useState } from "react";
-import { ASSET_PATHS } from "../constants";
-import logo from "../assets/Logo-Final-White 1.png"
+import React, { useState, useEffect } from "react";
+import { logo } from "../assets";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  const links = [
+    { label: "Home", href: "#home" },
+    { label: "About", href: "#about" },
+    { label: "Services", href: "#services" },
+    { label: "Why Choose Us", href: "#why-choose-us" },
+    { label: "Portfolio", href: "#portfolio" },
+    { label: "Products", href: "#products" },
+    { label: "Technologies", href: "#technologies" },
+    { label: "Contact", href: "#contact" },
+  ];
+
+  // 🔥 Detect scroll position
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setScrolled(true);
+      } else {
+        setScrolled(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <>
-      <header className="w-full bg-transparent   fixed top-0 left-0 z-50">
-        <div className="mx-auto container-max px-6 py-4 flex items-center justify-between">
+      <header
+        className={`w-full fixed top-0 left-0 z-50 transition-colors duration-300 ${scrolled ? "bg-red-600 shadow-md" : "bg-transparent"
+          }`}
+      >
+        <div className="mx-auto container-max px-4 sm:px-6 md:px-10 lg:px-16 py-4 gap-4 flex items-center justify-between">
           <div className="flex items-center gap-4">
             <img
               src={logo}
               alt="Logo"
-              className="w-[200px] h-auto object-contain"
+              className="w-[25%] sm:w-[20%] md:w-[15%] lg:w-[5%] max-w-[180px] min-w-[200px] h-auto object-contain"
             />
           </div>
 
-          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
-            <a href="#home" className="hover:underline">
-              Home
-            </a>
-            <a href="#home" className="hover:underline">
-              About
-            </a>
-            <a href="#home" className="hover:underline">
-              Services
-            </a>
-            <a href="#home" className="hover:underline">
-              Why Choose Us
-            </a>
-            <a href="#home" className="hover:underline">
-              Portfolio
-            </a>
-            <a href="#home" className="hover:underline">
-              Products
-            </a>
-            <a href="#home" className="hover:underline">
-              Technologies
-            </a>
-            <a href="#home" className="hover:underline">
-              Contact
-            </a>
-            <a href="#features" className="hover:underline">
-              Features
-            </a>
-            <a href="#pricing" className="hover:underline">
-              Pricing
-            </a>
-            <a href="#contact" className="hover:underline">
-              Contact
-            </a>
-            <button className="ml-2 px-4 py-2 rounded-full border hover:bg-gray-50">
-              Sign in
-            </button>
+          {/* Desktop Nav */}
+          <nav className="hidden  lg:flex items-center  gap-8 text-sm font-medium">
+            {links.map((link) => (
+              <a
+                key={link.label}
+                href={link.href}
+                className={` hover:underline  whitespace-nowrap transition-colors ${scrolled ? "text-white" : "text-white"
+                  }`}
+              >
+                {link.label}
+              </a>
+            ))}
           </nav>
 
           {/* Mobile Menu Button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
               aria-label="open menu"
               onClick={() => setMenuOpen(true)}
-              className="p-2 rounded-md border hover:bg-gray-100"
+              className={`p-2 px-4 rounded-md border ${scrolled ? "bg-white text-black" : "text-white border-white"
+                }`}
             >
               ☰
             </button>
@@ -79,37 +83,35 @@ export default function Navbar() {
 
       {/* Sidebar Drawer */}
       <aside
-        className={`fixed top-0 right-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ${menuOpen ? "translate-x-0" : "translate-x-full"
+        className={`fixed  overflow-auto top-0 right-0 h-full w-64 bg-white shadow-lg z-50 transform transition-transform duration-300 ${menuOpen ? "translate-x-0" : "translate-x-full"
           }`}
       >
-        <div className="flex items-center justify-between px-6 py-4 border-b">
+        <div className="flex items-center bg-[#20222D] justify-between px-6 py-[26px] border-b">
           <img
-            src={ASSET_PATHS.logo}
+            src={logo}
             alt="Logo"
             className="w-28 h-auto object-contain"
           />
           <button
             aria-label="close menu"
             onClick={() => setMenuOpen(false)}
-            className="text-2xl leading-none"
+            className="text-2xl leading-none text-white"
           >
             ×
           </button>
         </div>
 
         <nav className="flex flex-col px-6 py-6 space-y-4 text-base font-medium">
-          <a href="#features" onClick={() => setMenuOpen(false)}>
-            Features
-          </a>
-          <a href="#pricing" onClick={() => setMenuOpen(false)}>
-            Pricing
-          </a>
-          <a href="#contact" onClick={() => setMenuOpen(false)}>
-            Contact
-          </a>
-          <button className="mt-4 px-4 py-2 rounded-full border w-fit hover:bg-gray-50">
-            Sign in
-          </button>
+          {links.map((link) => (
+            <a
+              onClick={() => setMenuOpen(false)}
+              key={link.label}
+              href={link.href}
+              className="hover:underline transition-colors"
+            >
+              {link.label}
+            </a>
+          ))}
         </nav>
       </aside>
     </>

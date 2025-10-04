@@ -1,6 +1,7 @@
 import React from 'react'
 import { ASSET_PATHS } from '../constants'
 import { mobileMockup } from '../assets'
+import Button from '../reusable/Button'
 
 export default function Hero() {
   return (
@@ -18,24 +19,7 @@ export default function Hero() {
           <p className="mt-6 text-lg text-white">
             We build Android & iOS Mobile Apps that cater all your business needs and take it on the next level.</p>
           <div className="mt-8 flex flex-wrap gap-4">
-            <button className="
-            cursor-pointer
-            transition
-            duration-300
-            ease-in-out
-            hover:scale-105
-            inline-block
-    py-3 px-8                           
-    rounded-sm                          
-    text-white                          
-    font-semibold                      
-    shadow-lg                           
-    bg-gradient-to-b from-red-700 to-red-900 
-    [text-shadow:0px_0px_5px_rgba(255,255,255,0.7),_0px_1px_1px_rgba(0,0,0,0.5)]
-    [box-shadow:inset_0_1px_0_rgba(255,255,255,0.3),_0_2px_4px_rgba(0,0,0,0.5)]
-">
-              GET A FREE QUOTE
-            </button>
+          <Button>GET A FREE QUOTE</Button>
           </div>
         </div>
       </div>

@@ -11,6 +11,7 @@ import mvpDev from "../assets/Group 182.png"
 import applePlay from "../assets/00_Home_1_14.png"
 import googlePlay from "../assets/banner_11.png"
 import caviarBg from "../assets/caviarBg.png"
+import clientSayBg from "../assets/Group 171.png"
 
 
 export {
@@ -27,6 +28,7 @@ export {
     applePlay,
     googlePlay,
     caviarBg,
+    clientSayBg,
 }
 
 

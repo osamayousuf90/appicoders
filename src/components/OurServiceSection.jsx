@@ -1,14 +1,14 @@
 import React from 'react';
-import { ourServicesBg, ourServicesHero } from '../assets';
+import { arImg, artificialInt, blockChain, customMobile, customWebDev, mvpDev, ourServicesBg, ourServicesHero } from '../assets';
 
 const OurServicesSection = () => {
     const services = [
-        { icon: '📱', title: 'Custom Mobile Applications', description: 'iOS, Android and Wearable Apps' },
-        { icon: '💡', title: 'Artificial Intelligence', description: 'Innovative AI & ML Solutions' },
-        { icon: '🖥️', title: 'Custom Web Development', description: 'Robust Webs, Progressive Web Apps' },
-        { icon: '🔗', title: 'Blockchain Development', description: 'Custom Blockchain Solutions' },
-        { icon: '👓', title: 'Augmented Reality', description: 'Futuristic AR Apps' },
-        { icon: '🚀', title: 'MVP Development', description: 'For Startups & Entrepreneurs' },
+        { icon: customMobile, title: 'Custom Mobile Applications', description: 'iOS, Android and Wearable Apps' },
+        { icon: artificialInt, title: 'Artificial Intelligence', description: 'Innovative AI & ML Solutions' },
+        { icon: customWebDev, title: 'Custom Web Development', description: 'Robust Webs, Progressive Web Apps' },
+        { icon: blockChain, title: 'Blockchain Development', description: 'Custom Blockchain Solutions' },
+        { icon: arImg, title: 'Augmented Reality', description: 'Futuristic AR Apps' },
+        { icon: mvpDev, title: 'MVP Development', description: 'For Startups & Entrepreneurs' },
     ];
 
     return (
@@ -54,12 +54,12 @@ const OurServicesSection = () => {
                             </p>
                             <div className="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-10">
                                 {services.map((service, index) => (
-                                    <div key={index} className="flex space-x-4 items-start">
+                                    <div key={index} className="flex space-x-4  items-start">
                                         <div className="flex-shrink-0 mt-1">
-                                            <div className="text-3xl text-white">{service.icon}</div>
+                                            <img src={service?.icon} alt="imgs" className='w-[45px]' />
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-bold">{service.title}</h3>
+                                            <h3 className="text-xl  font-bold">{service.title}</h3>
                                             <p className="mt-1 text-sm opacity-80">{service.description}</p>
                                         </div>
                                     </div>

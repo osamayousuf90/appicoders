@@ -8,6 +8,10 @@ import customWebDev from "../assets/Group 179.png"
 import blockChain from "../assets/Group 180.png"
 import arImg from "../assets/Group 181.png"
 import mvpDev from "../assets/Group 182.png"
+import applePlay from "../assets/00_Home_1_14.png"
+import googlePlay from "../assets/banner_11.png"
+import caviarBg from "../assets/caviarBg.png"
+
 
 export {
     logo,
@@ -19,7 +23,10 @@ export {
     customWebDev,
     blockChain,
     arImg,
-    mvpDev
+    mvpDev,
+    applePlay,
+    googlePlay,
+    caviarBg,
 }
 
 

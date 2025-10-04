@@ -5,6 +5,8 @@ import Features from './components/Features'
 import Footer from './components/Footer'
 import AppicodersSection from './components/AppicodersSection'
 import OurServicesSection from './components/OurServiceSection'
+import CaviarSection from './components/CaviarSecion'
+
 
 export default function App() {
   return (
@@ -14,6 +16,7 @@ export default function App() {
         <Hero />
         <AppicodersSection />
         <OurServicesSection />
+        <CaviarSection />
         <Features />
       </main>
       <Footer />

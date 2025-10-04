@@ -12,7 +12,12 @@ import applePlay from "../assets/00_Home_1_14.png"
 import googlePlay from "../assets/banner_11.png"
 import caviarBg from "../assets/caviarBg.png"
 import clientSayBg from "../assets/Group 171.png"
-
+import productBgImg from "../assets/Group 172.png"
+import product1 from "../assets/Group 151.png"
+import product2 from "../assets/Group 146.png"
+import product3 from "../assets/Group 147.png"
+import product4 from "../assets/Group 149.png"
+import contact from "../assets/contact.png"
 
 export {
     logo,
@@ -29,6 +34,12 @@ export {
     googlePlay,
     caviarBg,
     clientSayBg,
+    productBgImg,
+    product1,
+    product2,
+    product3,
+    product4,
+    contact,
 }
 
 

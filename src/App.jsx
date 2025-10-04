@@ -8,6 +8,9 @@ import OurServicesSection from './components/OurServiceSection'
 import CaviarSection from './components/CaviarSecion'
 import WhyChooseUs from './components/WhyChooseUs'
 import WhatOurClientSay from './components/WhatOurClientSay'
+import Industry from './components/Industries'
+import ProductSection from './components/ProductSection'
+import ContactSection from './components/ContactSection'
 
 
 export default function App() {
@@ -21,7 +24,10 @@ export default function App() {
         <CaviarSection />
         <WhyChooseUs />
         <WhatOurClientSay />
-        <Features />
+        <Industry />
+        <ProductSection />
+        <ContactSection />
+        
       </main>
       <Footer />
     </div>

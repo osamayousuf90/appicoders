@@ -85,17 +85,17 @@ const WhatOurClientSay = () => {
                 style={{ backgroundImage: `url(${clientSayBg})` }}
             ></div>
 
-            <div className="relative z-10 w-full max-w-6xl mx-auto py-12 lg:py-24">
-                <div className='grid grid-cols-8 items-center gap-2'>
-                    <div className='flex flex-col col-span-2'>
-                        <h2 className="text-4xl  sm:text-5xl font-extrabold text-center mb-4 bg-clip-text text-transparent bg-gradient-to-r from-teal-400 to-cyan-500">
-                            What Our Clients Say
+            <div className="relative z-10 w-full max-w-6xl  py-12 lg:py-24">
+                <div className='grid grid-cols-8 items-center gap-8'>
+                    <div className='flex flex-col text-left col-span-3 max-md:col-span-8'>
+                        <h2 className="text-lg   font-normal mb-4 text-white">
+                            CLIENT TESTIMONIALS
                         </h2>
-                        <p className="text-xl  text-gray-400 text-center mb-12 max-w-2xl mx-auto">
-                            Trusted by businesses worldwide to deliver exceptional results and transformative growth.
-                        </p>
+                        <h2 className="text-4xl  sm:text-5xl font-semibold mb-4 text-white">
+                            What Our Clients Saying
+                        </h2>
                     </div>
-                    <div className="relative col-span-6 overflow-hidden rounded-xl shadow-2xl bg-gray-800 p-4">
+                    <div className="relative col-span-5 max-md:col-span-8 overflow-hidden rounded-xl shadow-2xl bg-white p-4">
 
                         <div
                             className="flex transition-transform duration-700 ease-in-out"
@@ -107,21 +107,18 @@ const WhatOurClientSay = () => {
                                     className="flex-shrink-0 w-full p-6 sm:p-10"
                                 >
                                     <div className="flex flex-col lg:flex-row items-start lg:items-center">
-                                        <div className="lg:w-1/4 flex flex-col items-center p-4">
-                                            <img
-                                                src={testimonial.avatar}
-                                                alt={testimonial.name}
-                                                className="w-24 h-24 rounded-full object-cover border-4 border-teal-500 shadow-lg mb-4"
-                                                onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/100x100/6B7280/ffffff?text=User"; }}
-                                            />
-                                            <p className="text-lg font-bold text-white mt-2">{testimonial.name}</p>
-                                            <p className="text-sm text-cyan-400">{testimonial.title}</p>
-                                        </div>
-
-                                        <div className="lg:w-3/4 lg:pl-8 pt-4 lg:pt-0 border-t lg:border-t-0 lg:border-l border-gray-700">
-                                            <StarRating rating={testimonial.rating} />
-                                            <blockquote className="mt-4 text-xl sm:text-2xl italic font-medium text-gray-200 leading-relaxed">
-                                                "{testimonial.quote}"
+                                        <div className="lg:w-3/4 lg:pl-8 pt-4 lg:pt-0">
+                                            <div className="flex items-center gap-2  p-2 ">
+                                                <img
+                                                    src={testimonial.avatar}
+                                                    alt={testimonial.name}
+                                                    className="w-24 h-24 rounded-full object-cover border-4 border-teal-500 shadow-lg mb-4"
+                                                    onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/100x100/6B7280/ffffff?text=User"; }}
+                                                />
+                                                <p className="text-lg font-bold text-black ">{testimonial.name}</p>
+                                            </div>
+                                            <blockquote className="mt-4 text-xl sm:text-2xl italic font-medium text-black leading-relaxed">
+                                                {testimonial.quote}
                                             </blockquote>
                                         </div>
                                     </div>
@@ -134,14 +131,14 @@ const WhatOurClientSay = () => {
                                 <button
                                     key={index}
                                     onClick={() => setActiveIndex(index)}
-                                    className={`w-3 h-3 rounded-full transition-all duration-300 ${index === activeIndex ? 'bg-teal-400 w-8' : 'bg-gray-600 hover:bg-gray-400'
+                                    className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${index === activeIndex ? 'bg-red-400 w-8' : 'bg-gray-600  hover:bg-gray-400'
                                         }`}
                                     aria-label={`Go to slide ${index + 1}`}
                                 />
                             ))}
                         </div>
 
-                        <button
+                        {/* <button
                             onClick={goToPrev}
                             className="absolute top-1/2 left-4 transform -translate-y-1/2 bg-gray-700 p-3 rounded-full text-white hover:bg-teal-500 transition-colors duration-300 shadow-xl opacity-75 hover:opacity-100 hidden sm:block"
                             aria-label="Previous testimonial"
@@ -155,7 +152,7 @@ const WhatOurClientSay = () => {
                             aria-label="Next testimonial"
                         >
                             <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
-                        </button>
+                        </button> */}
                     </div>
                 </div>
             </div>

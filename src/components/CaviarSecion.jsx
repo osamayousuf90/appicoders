@@ -38,9 +38,9 @@ const CaviarSection = () => {
 
                     <div className="text-white">
                         <div className="flex space-x-3 mb-6">
-                            <span className="bg-gray-700 text-sm font-medium px-3 py-1 rounded-full">iOS Development</span>
-                            <span className="bg-gray-700 text-sm font-medium px-3 py-1 rounded-full">Android Development</span>
-                            <span className="bg-gray-700 text-sm font-medium px-3 py-1 rounded-full">UI UX Design</span>
+                            <span className="bg-white text-red-500 text-sm font-medium px-3 py-1 rounded-lg">iOS Development</span>
+                            <span className="bg-white text-red-500 text-sm font-medium px-3 py-1 rounded-lg">Android Development</span>
+                            <span className="bg-white text-red-500 text-sm font-medium px-3 py-1 rounded-lg">UI UX Design</span>
                         </div>
 
                         <h2 className="text-5xl font-extrabold leading-tight tracking-tight mt-4">
@@ -61,8 +61,7 @@ const CaviarSection = () => {
                                 <img src={googlePlay} alt="Get it on Google Play" className="h-10 w-auto" />
                             </a>
                         </div>
-
-                        <Button>VIEW CASE STUDY</Button>
+                        <Button extraClass={"mt-5"}>VIEW CASE STUDY</Button>
                     </div>
 
                     <div className="relative h-[650px] flex items-center justify-center overflow-hidden">
@@ -89,11 +88,9 @@ const CaviarSection = () => {
                                 >
                                     {({ isActive }) => (
                                         <div className={`
-                                            // **Glass Card Wrapper** - takes full slide height and clips content if necessary
                                             relative flex justify-center items-center w-[80%] h-full 
-                                            p-2 // Added padding inside the glass card
+                                            p-2 
                                             transition-all duration-500 ease-out
-                                            
                                             ${isActive
                                                 ? 'bg-white/10 backdrop-blur-lg rounded-3xl border border-white/20 shadow-2xl scale-[1.05] opacity-100' // Slight scale to emphasize active state
                                                 : 'opacity-70 scale-100' 

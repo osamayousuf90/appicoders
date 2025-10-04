@@ -6,6 +6,7 @@ import Footer from './components/Footer'
 import AppicodersSection from './components/AppicodersSection'
 import OurServicesSection from './components/OurServiceSection'
 import CaviarSection from './components/CaviarSecion'
+import WhyChooseUs from './components/WhyChooseUs'
 
 
 export default function App() {
@@ -17,6 +18,7 @@ export default function App() {
         <AppicodersSection />
         <OurServicesSection />
         <CaviarSection />
+        <WhyChooseUs />
         <Features />
       </main>
       <Footer />
